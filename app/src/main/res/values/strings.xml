@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Park it !</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string-array name="fuels">
+        <item>CNG</item>
+        <item>Petrol</item>
+        <item>Diesel</item>
+    </string-array>
+</resources>

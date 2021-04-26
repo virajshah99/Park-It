@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".otpverify">
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="301dp"
+            app:srcCompat="@drawable/ic_launcher" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="50dp"
+            android:text="ENTER OTP"
+            android:textColor="#070707"
+            android:textSize="35sp"
+            app:fontFamily="@font/bungee_inline"
+            tools:text="ENTER OTP" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:textColorHint="#9C9B9B"
+            app:passwordToggleEnabled="true"
+            tools:ignore="ExtraText">
+
+            <EditText
+                android:id="@+id/otpid"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+
+                android:layout_marginRight="40dp"
+                android:background="@drawable/button_rounded"
+                android:ems="10"
+                android:hint="OTP"
+                android:inputType="numberDecimal"
+                android:paddingLeft="140dp"
+                android:textColor="#E8E5E5"
+                android:textSize="24sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/verifybutton"
+            android:layout_width="357dp"
+            android:layout_height="77dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/button_rounded"
+            android:onClick="msg"
+            android:text="VERIFY"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/resend1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="160dp"
+
+            android:layout_marginTop="40dp"
+            android:text="TextView"
+            android:textColor="#575757"
+            tools:text="Resend Code ?" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

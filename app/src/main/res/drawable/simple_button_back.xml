@@ -1,0 +1,12 @@
+<inset xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Border -->
+    <shape android:shape="rectangle" >
+        <solid android:color="@android:color/black" />
+        <corners
+            android:radius="40dp"/>
+        <stroke
+            android:width="2dip"
+            android:color="@android:color/black"/>
+    </shape>
+</inset>

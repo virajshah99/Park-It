@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".AddOnMap"
+    tools:openDrawer="start">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            map:layout_constraintBottom_toBottomOf="parent"
+            map:layout_constraintEnd_toEndOf="parent"
+            map:layout_constraintHorizontal_bias="0.0"
+            map:layout_constraintStart_toStartOf="parent"
+            map:layout_constraintTop_toTopOf="parent"
+            map:layout_constraintVertical_bias="1.0" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal"
+            map:layout_constraintEnd_toEndOf="@+id/map"
+            map:layout_constraintStart_toStartOf="@+id/map"
+            map:layout_constraintTop_toTopOf="@+id/map">
+
+            <Button
+                android:id="@+id/bckButn"
+                android:layout_width="45dp"
+                android:layout_height="fill_parent"
+                android:background="@drawable/back"
+                android:drawableLeft="@drawable/ic_back"
+                android:gravity="center"
+                android:onClick="bckBtnPressed"
+                android:paddingStart="12dp" />
+
+            <AutoCompleteTextView
+                android:id="@+id/searchAutoCompleteTextView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/back2"
+                android:completionThreshold="1"
+                android:hint="Source"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:paddingStart="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/locBtn"
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/simple_button_back"
+            android:drawableLeft="@android:drawable/ic_menu_mylocation"
+            android:gravity="center"
+            android:onClick="userLocation"
+            android:padding="10dp"
+            map:layout_constraintBottom_toBottomOf="@+id/map"
+            map:layout_constraintEnd_toEndOf="@+id/map" />
+
+        <LinearLayout
+            android:id="@+id/setRentDetail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            android:background="#FFFFFF"
+            map:layout_constraintBottom_toBottomOf="@+id/map"
+            map:layout_constraintEnd_toEndOf="@+id/map"
+            map:layout_constraintStart_toStartOf="parent"
+            map:layout_constraintTop_toTopOf="parent">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="0"
+                        android:padding="10dp"
+                        android:text="Address"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/sAddress"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="4"
+                        android:focusable="false"
+                        android:background="@drawable/back_dest"
+                        android:hint="Enter you address"
+                        android:inputType="text"
+                        android:padding="10dp"
+                        android:textSize="20sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:text="Start Time"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/setSTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_marginVertical="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/back_dest"
+                            android:padding="10dp"
+                            android:text="                "
+                            android:textSize="20sp" />
+
+                        <Button
+                            android:id="@+id/selETime"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_marginVertical="3dp"
+                            android:background="@drawable/simple_button_back"
+                            android:drawableStart="@android:drawable/ic_menu_recent_history"
+                            android:onClick="getTime1"
+                            android:paddingStart="10dp" />
+                    </LinearLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:text="End Time"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/setETime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_marginVertical="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/back_dest"
+                            android:padding="10dp"
+                            android:text=""
+                            android:textSize="20sp" />
+
+                        <Button
+                            android:id="@+id/selSTime"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_marginVertical="3dp"
+                            android:background="@drawable/simple_button_back"
+                            android:drawableStart="@android:drawable/ic_menu_recent_history"
+                            android:onClick="getTime2"
+                            android:paddingStart="10dp" />
+                    </LinearLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="0"
+                        android:padding="10dp"
+                        android:text="Charges/hr"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/setCost"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="4"
+                        android:background="@drawable/back_dest"
+                        android:hint="Enter charges/hr"
+                        android:inputType="number"
+                        android:padding="10dp"
+                        android:text=""
+                        android:textSize="20sp" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/Done"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/simple_button_back"
+                    android:onClick="setDone"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Done"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/setCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:onClick="setCancel"
+                    android:background="@drawable/simple_button_back"
+                    android:padding="10dp"
+                    android:text="Cancel"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
